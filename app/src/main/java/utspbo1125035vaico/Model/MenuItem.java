@@ -1,21 +1,6 @@
 package main.java.utspbo1125035vaico;
 
-
-enum EnumUkuran {
- SMALL, MEDIUM, LARGE
-}
-
-enum Enumkategori{
-
-}
-
-
-interface Customizable {
-void customize(List<Integer> customizations);
-void customize(int[] customizations);
-}
-
-
+import main.java.utspbo1125035vaico.Model.EnumUkuran;
 
 public abstract class MenuItem {
     protected int ID;
@@ -36,27 +21,45 @@ public abstract class MenuItem {
     public double getHargaBase() { return hargaBase; }
 
 
-    abstract double hitungHargaTotal();
+    public abstract double hitungHargaTotal();
     abstract String getOrderDetail();
 
-    public double hitungHargaTotal(int ) {
-        return hitungHargaTotal() *;
+    public double hitungHargaTotal(int jumlah) {
+        return hitungHargaTotal() * jumlah;
     }
 
-    public double hitungHargaTotal (int jumlah){}
-
-
-}
-
-public class Kopi extends MenuItem {
-
-    public Kopi(int ID, String Nama, double hargaBase, int stok) {
-        super(ID, Nama, hargaBase, stok);
-
-
+    public double hitungHargaTotal(int jumlah, String kodePromo) {
+            double total = hitungHargaTotal(jumlah);
+            if (kodePromo != null){
+                System.out.println( "Selamat anda mendapatkan diskon sebesar : 30%");
+             total = total * 0.7;
+            }
+         return total;
     }
 
+    public hitungHargaTotal(int jumlah, EnumUkuran ukuran){
+        double total = hitungHargaTotal(jumlah);
+            switch (ukurankuran) {
+                case MEDIUM: total += 10000;
+                    break;
+                case LARGE: total += 20000;
+                case SMALL:
+                default:
+                    break;
+            }
+        }
 }
+
+
+        
+
+
+
+
+
+
+
+
 
 
 
