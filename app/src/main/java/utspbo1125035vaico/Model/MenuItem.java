@@ -39,11 +39,11 @@ public abstract class MenuItem {
     abstract double hitungHargaTotal();
     abstract String getOrderDetail();
 
-    public double hitungHargaTotal(int jumlah) {
-        return hitungHargaTotal() * jumlah;
+    public double hitungHargaTotal(int ) {
+        return hitungHargaTotal() *;
     }
 
-    public double hitungHargaTotal ()
+    public double hitungHargaTotal (int jumlah){}
 
 
 }
@@ -64,19 +64,3 @@ public class Kopi extends MenuItem {
 
 
 
-
-
-
-
-
-
-public class Model {
-    
-
-
-
-
-
-
-
-}
